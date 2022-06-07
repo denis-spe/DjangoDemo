@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Django Demonstration">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- icon link -->
+        <link rel="icon" href="{% static 'images/icon.png' %}">
+
+        <!-- linking css file -->
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+        <!-- Document Title -->
+        {% if title %}
+            <title>starterApp | {{ title }}</title>
+        {% else %}
+            <title>starterApp | Home</title>
+        {% endif %}
+
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <!-- Main title -->
+                <div class="header-title-container">
+                    <h1>starter<span class="app">App</span></h1>
+                </div>
+
+                {% include 'nav.html' %}
+            </div>
+        </header>
+
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="copyright-container">
+                    <div class="footer-title-container">
+                        <h1>starter<span class="app">App</span></h1>
+                    </div>
+
+                    <div class="copyright">
+                        <p>copyright &copy; 2022</p>
+                    </div>
+
+                    <div class="author-container">
+                        <h2>Author</h2>
+                        <div class="author">
+                            <img src="{% static 'images/author.jpg' %}" alt="author" width="60">
+                            <h3>Den</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- Javascript link -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
