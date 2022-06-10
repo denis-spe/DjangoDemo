@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div class="login-container">
+    <form methods="POST">
+        {% csrf_token %}
+        {{ forms }}
+    </form>
+</div>
+{% endblock %}

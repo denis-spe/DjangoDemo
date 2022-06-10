@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div class='register-container'>
+    <div class="register-titles">
+        <h2>starter<span id='app'>App</span></h2>
+    </div>
+    <div class="register-form">
+        <form methods="POST">
+            {% csrf_token %}
+            <div class='full-name-container'>
+                <label for='names'>Full Name</label>
+                <input type='text' placeholder='Full Name' name="names" id='names'>
+            </div>
+            <div class='username-container'>
+                <label for='username'>Username</label>
+                <input type='text' placeholder='Username' name="username" id='username'>
+            </div>
+            <div class='email-container'>
+                <label for='email'>Email</label>
+                <input type='email' placeholder='Email' name="email" id='email'>
+            </div>
+            <div class='password-container'>
+                <label for='password'>Password</label>
+                <input type='password' placeholder='Password' name="password" id='password'>
+            </div>
+            <div class='repeat-password-container'>
+                <label for='repeated-password'>Repeat password</label>
+                <input type='password' placeholder='Repeat password' name="password" id='repeated-password'>
+            </div>
+            <div class='submit-container'>
+                
+                <input type='submit' value='Next'  name="next" id="next">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
