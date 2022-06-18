@@ -1,9 +1,10 @@
 {% extends 'layout.html' %}
 {% block main %}
 <div class="login-container">
-    <form methods="POST">
+    <form methods="POST" action="{% url 'starterApp:index' %}">
         {% csrf_token %}
         {{ forms }}
+        <input type="submit" value="Next">
     </form>
 </div>
 {% endblock %}
